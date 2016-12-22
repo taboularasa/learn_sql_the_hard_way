@@ -1,9 +1,16 @@
+DROP TABLE IF EXISTS person;
+DROP TABLE IF EXISTS person_pet;
+DROP TABLE IF EXISTS pet;
+
 CREATE TABLE person (
   id INTEGER PRIMARY KEY,
   first_name TEXT,
   last_name TEXT,
   age INTEGER
 );
+
+ALTER TABLE person ADD COLUMN height INTEGER;
+ALTER TABLE person ADD COLUMN weight INTEGER;
 
 CREATE TABLE pet(
   id INTEGER PRIMARY KEY,
@@ -17,8 +24,8 @@ CREATE TABLE person_pet (
   person_id INTEGER,
   pet_id INTEGER
 );
-INSERT INTO person (id, first_name, last_name, age)
-  VALUES (0, 'Zed', 'Shaw', 37);
+INSERT INTO person (id, first_name, last_name, age, height, weight)
+  VALUES (0, 'Zed', 'Shaw', 37, 100, 200);
 
 INSERT INTO pet (id, name, breed, age, dead)
   VALUES (0, 'Fluffy', 'Unicorn', 1000, 0);
